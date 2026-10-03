@@ -15,9 +15,17 @@ htmlcov/
 # Large raw dataset files (both train and eval parquet)
 data/raw/
 
+# Generated processed data (reproduced by running pipeline)
+data/processed/
+
+# Trained model artifacts (reproduced by running pipeline)
+models/
+
+# Generated results (figures, metrics, predictions — all reproduced by pipeline)
+results/
+
 # Word report document files
 *.docx
-Moha_Prasath_AML_Project_Report.docx
 
 # Temporary model training telemetry
 catboost_info/
