@@ -127,6 +127,24 @@ Launch via:
 streamlit run app/app.py
 ```
 
+### App Screenshots
+
+**Tab 1 — Today's Store Replenishment Checklist**
+
+![Tab 1 Store Action List](docs/screenshots/tab1_store_action_list.png)
+
+Store staff select their shop from a dropdown and instantly see a colour-coded checklist (🔴 RED = stockout tomorrow, 🟡 YELLOW = watch closely, 🟢 GREEN = safe) with direct shelf instructions per item. No ML knowledge needed — just pick your store and act.
+
+---
+
+**Tab 2 — Did the AI Get It Right Yesterday? (Past Accuracy Check)**
+
+![Tab 2 Past Accuracy Check](docs/screenshots/tab2_past_accuracy_check.png)
+
+Managers pick any past date and product to compare what StockGuard warned vs. what actually happened on the shelf, with a clear True Positive / True Negative / False Positive / False Negative verdict displayed. This builds daily trust and accountability in the AI system.
+
+---
+
 ### Key Frontline Features:
 1. **Automated Live Weather Sync:** Automatically queries the Open-Meteo live API for the store's exact city coordinates. Displays real-time temperature, humidity, rain forecast, and wind speed—automatically injecting them into AI risk calculations with **zero manual typing**.
 2. **Accessible High-Contrast UI:** Universal cards engineered with solid backgrounds and borders for 100% visibility in both Dark Mode and Light Mode.
