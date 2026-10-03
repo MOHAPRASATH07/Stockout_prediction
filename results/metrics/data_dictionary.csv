@@ -1,0 +1,20 @@
+column_name,data_type,null_count,sample_value,description
+city_id,int64,0,0,Anonymized identifier for the retail market city
+store_id,int64,0,0,Anonymized identifier for the fulfillment store/warehouse
+management_group_id,int64,0,2,Operational regional management division ID
+first_category_id,int64,0,29,"Broad product category (e.g. Vegetables, Meat, Fruit)"
+second_category_id,int64,0,76,Sub-category identifier
+third_category_id,int64,0,60,Granular commodity classification
+product_id,int64,0,580,Unique stock-keeping unit (SKU) identifier
+dt,str,0,2024-03-28,Calendar date of observation (YYYY-MM-DD)
+sale_amount,float64,0,1.1,Total daily recorded sales volume/amount for this SKU-store
+hours_sale,object,0,[0.  0.  0.  0.  0.  0.1 0.  0.1 0.2 ...,24-element float list of hourly sales distributions (0:00 to 23:00)
+stock_hour6_22_cnt,int32,0,6,Total hours out of stock during active operating hours (06:00 to 22:00)
+hours_stock_status,object,0,[1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 ...,"24-element binary vector (1 = out of stock, 0 = in stock) per hour"
+discount,float64,0,0.996,"Applied promotional discount multiplier (e.g. 1.0 = full price, 0.8 = 20% off)"
+holiday_flag,int32,0,0,Binary indicator for national statutory holidays
+activity_flag,int32,0,0,Binary indicator for marketing campaign/promotional event
+precpt,float64,0,1.6999,Recorded precipitation level in mm (meteorological context)
+avg_temperature,float64,0,15.48,Average ambient daily temperature in degrees Celsius
+avg_humidity,float64,0,73.54,Average daily relative humidity percentage
+avg_wind_level,float64,0,1.97,Average Beaufort wind scale level

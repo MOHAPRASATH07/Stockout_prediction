@@ -1,0 +1,13 @@
+{
+  "best_parameters": {
+    "learning_rate": 0.0224831270535195,
+    "max_depth": 8,
+    "min_child_weight": 5,
+    "subsample": 0.8478254022286159,
+    "colsample_bytree": 0.6072045730035308,
+    "gamma": 2.909729556485983
+  },
+  "best_validation_pr_auc": 0.59881,
+  "number_of_trials": 10,
+  "total_optimization_time_seconds": 35.46
+}

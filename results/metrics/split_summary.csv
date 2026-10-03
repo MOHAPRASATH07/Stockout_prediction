@@ -1,0 +1,4 @@
+split,start_date,end_date,num_days,num_rows,positive_count,positive_rate_pct
+Train,2024-03-28,2024-05-28,62,124000,57615,46.46
+Validation,2024-05-29,2024-06-11,14,28000,11083,39.58
+Test,2024-06-12,2024-06-25,14,28000,11410,40.75

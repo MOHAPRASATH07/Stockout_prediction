@@ -1,0 +1,76 @@
+project:
+  name: "Stockout Risk Prediction and Explainable Demand Forecasting for Fresh Retail"
+  version: "1.0.0"
+  random_seed: 42
+
+data:
+  hf_repo: "Dingdong-Inc/FreshRetailNet-50K"
+  train_url: "https://huggingface.co/datasets/Dingdong-Inc/FreshRetailNet-50K/resolve/main/data/train.parquet"
+  eval_url: "https://huggingface.co/datasets/Dingdong-Inc/FreshRetailNet-50K/resolve/main/data/eval.parquet"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_parquet: "data/raw/train.parquet"
+  eval_parquet: "data/raw/eval.parquet"
+  sample_parquet: "data/processed/freshretail_sample.parquet"
+  sample_size_series: 2000  # Number of store-product series for agile development/testing
+
+schema:
+  id_columns:
+    - "city_id"
+    - "store_id"
+    - "management_group_id"
+    - "first_category_id"
+    - "second_category_id"
+    - "third_category_id"
+    - "product_id"
+  temporal_columns:
+    - "dt"
+  daily_demand_columns:
+    - "sale_amount"
+  hourly_arrays:
+    sales: "hours_sale"             # 24-element float array (hourly sales)
+    stock_status: "hours_stock_status" # 24-element int array (0 = in-stock, 1 = out-of-stock)
+  stockout_metric: "stock_hour6_22_cnt" # Count of stockout hours between 06:00 and 22:00
+  covariates:
+    - "discount"
+    - "holiday_flag"
+    - "activity_flag"
+    - "precpt"
+    - "avg_temperature"
+    - "avg_humidity"
+    - "avg_wind_level"
+
+target:
+  name: "stockout_next_day"  # Daily horizon: 1 if stock_hour6_22_cnt > 0 on day t+1, else 0
+  threshold_stockout_hours: 1
+  evaluation_horizons:
+    - "next_day"
+
+split:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  date_col: "dt"
+
+models:
+  baseline:
+    dummy_strategy: "prior"
+    max_iter: 1000
+    class_weight: "balanced"
+  xgboost:
+    objective: "binary:logistic"
+    eval_metric: "aucpr"
+    n_estimators: 300
+    learning_rate: 0.05
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    min_child_weight: 3
+    early_stopping_rounds: 30
+    random_state: 42
+
+paths:
+  models_dir: "models"
+  results_figures: "results/figures"
+  results_metrics: "results/metrics"
+  results_predictions: "results/predictions"

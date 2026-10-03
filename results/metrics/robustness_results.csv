@@ -1,0 +1,9 @@
+Operating Condition,Sample Count,Positive Rate (%),PR-AUC,Recall,F1-Score
+Overall Test Baseline,28000,40.75,0.6251,0.6338,0.6107
+Normal Demand (20-80th pct),17428,39.76,0.594,0.6153,0.5907
+High Demand Surge (Top 20%),5499,42.97,0.6592,0.6708,0.6422
+Promotional Event Active,12386,40.88,0.6181,0.6461,0.6148
+Standard Full Price,12193,41.3,0.6341,0.6251,0.6087
+Chronic Stockout History (>=50%),12102,54.26,0.691,0.8532,0.7103
+Stable In-Stock History (<=10%),5795,21.85,0.335,0.0174,0.0338
+Precipitation / Bad Weather,28000,40.75,0.6251,0.6338,0.6107

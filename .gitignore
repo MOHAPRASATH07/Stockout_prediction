@@ -1,0 +1,27 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python byte-code & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large raw dataset files (both train and eval parquet)
+data/raw/
+
+# Word report document files
+*.docx
+Moha_Prasath_AML_Project_Report.docx
+
+# Temporary model training telemetry
+catboost_info/
+
+# OS specific files
+.DS_Store
+Thumbs.db
